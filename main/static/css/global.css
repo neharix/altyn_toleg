@@ -1,0 +1,26 @@
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.mr-auto {
+    margin-right: auto;
+}
+
+.fs-bg {
+    font-size: 1.9rem !important;
+}
+
+.button {
+    background-color: #ecf7fd;
+    color: #148ee4;
+    border-radius: 30px;
+}
+
+.button:hover {
+    background-color: #d1edfc;
+    color: #148ee4;
+}
+.dots {
+    font-size: 1.8rem;
+}

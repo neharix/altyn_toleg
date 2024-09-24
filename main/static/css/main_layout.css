@@ -7,8 +7,8 @@
 }
 
 * {
-    font-family: var(--default-font-family) !important;
-    font-size: var(--default-font-size) !important;
+    font-family: var(--default-font-family);
+    font-size: var(--default-font-size);
 }
 
 nav {
@@ -23,4 +23,5 @@ body {
     margin-bottom: var(--block-margin-size);
     border-radius: 20px;
     background-color: var(--block-color);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.03), 0 6px 6px rgba(0, 0, 0, 0.03);
 }
