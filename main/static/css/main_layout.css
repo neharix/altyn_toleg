@@ -14,6 +14,7 @@
 nav {
     border-radius: 0 0 20px 20px;
     background-color: var(--block-color);
+    min-width: 400px !important;
 }
 body {
     background-color: var(--bg-color);
@@ -24,4 +25,14 @@ body {
     border-radius: 20px;
     background-color: var(--block-color);
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.03), 0 6px 6px rgba(0, 0, 0, 0.03);
+}
+
+.nav-link i {
+    font-size: 1.8rem;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
 }
