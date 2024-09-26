@@ -3,6 +3,7 @@
 }
 
 .floating-label__input {
+    width: 100%;
     display: flex;
     padding: 13px 14px 14px 15px;
     border: none !important;
@@ -70,7 +71,7 @@
 .floating-label__input:hover~.floating-label__outline .floating-label__leading,
 .floating-label__input:hover~.floating-label__outline .floating-label__notch,
 .floating-label__input:hover~.floating-label__outline .floating-label__trailing {
-    border-color: rgba(0, 0, 0, 0.87);
+    border-color: rgba(100, 162, 207, 0.87);
 }
 
 .floating-label.active .floating-label__leading,
@@ -88,7 +89,7 @@
 input:-webkit-autofill+.floating-label__outline .floating-label__leading,
 input:-webkit-autofill+.floating-label__outline .floating-label__notch,
 input:-webkit-autofill+.floating-label__outline .floating-label__trailing {
-    border-color: #6200ee;
+    border-color: #148ee4;
     border-width: 2px;
 }
 
@@ -105,8 +106,8 @@ input:-webkit-autofill+.floating-label__outline .floating-label__notch {
 .floating-label__input:valid~.floating-label__outline .floating-label__label,
 .floating-label__input:focus~.floating-label__outline .floating-label__label,
 input:-webkit-autofill+.floating-label__outline .floating-label__label {
-    color: rgba(98, 0, 238, 0.87);
-    transform: translateY(-21px) scale(0.75);
+    color: rgba(20, 142, 228, 0.87);
+    transform: translateY(-25px) scale(0.75);
 }
 
 input:-webkit-autofill,
@@ -142,15 +143,15 @@ input:-webkit-autofill {
 
 @keyframes shake {
     33.33% {
-        transform: translate3d(8px, -21px, 0) scale(0.75);
+        transform: translate3d(8px, -25px, 0) scale(0.75);
     }
 
     66.33% {
-        transform: translate3d(-2px, -21px, 0) scale(0.75);
+        transform: translate3d(-2px, -25px, 0) scale(0.75);
     }
 
     100% {
-        transform: translate3d(0, -21px, 0) scale(0.75);
+        transform: translate3d(0, -25px, 0) scale(0.75);
     }
 }
 
@@ -170,8 +171,4 @@ form {
     height: 100vh;
     justify-content: center;
     align-items: center;
-}
-
-.hello {
-    color: white
 }

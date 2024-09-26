@@ -12,3 +12,7 @@ def add_card(request: HttpRequest):
         print(request.POST["number"])
         print(request.POST["cardholder"])
     return render(request, "views/add_card.html")
+
+
+def recharge(request: HttpRequest):
+    return render(request, "views/recharge.html")

@@ -1,8 +1,5 @@
 {% extends "layouts/main_layout.html" %}
 {% load static %}
-{% block head %}
-    <link rel="stylesheet" href="{% static 'css/floating_input.css' %}">
-{% endblock head %}
 {% block title %}
     Baş sahypa
 {% endblock title %}
@@ -13,7 +10,7 @@
             <div class="m-2 d-flex justify-content-between align-items-center">
                 <div class="fw-bold fs-bg">0.00 TMT</div>
                 <div>
-                    <button class="btn button">
+                    <button class="btn button" onclick="location.href='{% url 'recharge' %}'">
                         <i class="bi bi-plus"></i>
                         Hasaby doldur
                     </button>
@@ -24,14 +21,23 @@
             <div class="m-2">Kartlarym</div>
             <div class="m-3 fw-bolder" id="cards">
                 <div class="my-3 my-card">
-                    <div class="d-flex justify-content-between">
-                        <div>Ishmenova Dunyagozel</div>
-                        <div>01/40</div>
+                    <div class="d-flex align-items-center">
+                        <div style="margin-right: 1rem;">
+                            <div class="d-flex justify-content-center align-items-center ico" style="">
+                                <i class="bi bi-credit-card"></i>
+                            </div>
+                        </div>
+                        <div class="w-100">
+                            <div class="d-flex justify-content-between">
+                                <div>Ishmenova Dunyagozel</div>
+                                <div>01/40</div>
+                            </div>
+                            <div>
+                                <span class="fw-bolder dots">&#x2022;&#x2022;&#x2022;&#x2022; &#x2022;&#x2022;&#x2022;&#x2022; &#x2022;&#x2022;&#x2022;&#x2022;</span> 6746
+                            </div>
+                            <div>Altyn asyr kart (beýleki)</div>
+                        </div>
                     </div>
-                    <div>
-                        <span class="fw-bolder dots">&#x2022;&#x2022;&#x2022;&#x2022; &#x2022;&#x2022;&#x2022;&#x2022; &#x2022;&#x2022;&#x2022;&#x2022;</span> 6746
-                    </div>
-                    <div class="mb-3">Altyn asyr kart (beýleki)</div>
                 </div>
             </div>
             <div class="d-flex">
@@ -47,21 +53,6 @@
             <div class="m-2">Töleglerim</div>
             <div class="d-flex justify-content-center w-100">
                 <button class="btn button w-50">Ähli töleglerimi görkez</button>
-            </div>
-            <div class="floating-label">
-                <input class="floating-label__input"
-                       type="text"
-                       name="firstName"
-                       autocomplete="off"
-                       required
-                       placeholder=" " />
-                <div class="floating-label__outline">
-                    <div class="floating-label__leading"></div>
-                    <div class="floating-label__notch">
-                        <label class="floating-label__label" for="firstName">Floating Label</label>
-                    </div>
-                    <div class="floating-label__trailing"></div>
-                </div>
             </div>
         </div>
     </div>
