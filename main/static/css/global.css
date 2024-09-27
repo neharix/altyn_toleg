@@ -45,3 +45,23 @@
 .txt-btn {
     color: #148ee4 !important;
 }
+
+
+
+::-webkit-scrollbar {
+    width: 0.5vw;
+    height: 1vh;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.15);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #a6b3f3;
+}

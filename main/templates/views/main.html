@@ -8,7 +8,7 @@
         <div class="block p-3">
             <div class="m-2">+993{{ request.user.number }} belgisiniň hasaby:</div>
             <div class="m-2 d-flex justify-content-between align-items-center">
-                <div class="fw-bold fs-bg">0.00 TMT</div>
+                <div class="fw-bold fs-bg">{{ request.user.balance|floatformat:2 }} TMT</div>
                 <div>
                     <button class="btn button" onclick="location.href='{% url 'recharge' %}'">
                         <i class="bi bi-plus"></i>

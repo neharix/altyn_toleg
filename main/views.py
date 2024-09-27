@@ -36,3 +36,8 @@ def add_card(request: HttpRequest):
 def recharge(request: HttpRequest):
     cards = [CardContainer(card) for card in Card.objects.filter(user=request.user)]
     return render(request, "views/recharge.html", {"cards": cards})
+
+
+def user_cards(request: HttpRequest):
+    cards = [CardContainer(card) for card in Card.objects.filter(user=request.user)]
+    return render(request, "views/cards.html", {"cards": cards})
