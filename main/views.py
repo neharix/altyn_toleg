@@ -1,15 +1,32 @@
 import datetime
+import random
 
 from django.http import HttpRequest
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
-from .containers import CardContainer
+from .containers import CardContainer, HistoryContainer
 from .models import *
 
 
 def main(request: HttpRequest):
     cards = [CardContainer(card) for card in Card.objects.filter(user=request.user)]
-    return render(request, "views/main.html", {"cards": cards})
+    histories = [
+        HistoryContainer(history)
+        for history in History.objects.filter(user=request.user).order_by(
+            "-payment_time"
+        )[:5]
+    ]
+    return render(request, "views/main.html", {"cards": cards, "histories": histories})
+
+
+def user_history(request: HttpRequest):
+    histories = [
+        HistoryContainer(history)
+        for history in History.objects.filter(user=request.user).order_by(
+            "-payment_time"
+        )
+    ]
+    return render(request, "views/history.html", {"histories": histories})
 
 
 def add_card(request: HttpRequest):
@@ -41,3 +58,29 @@ def recharge(request: HttpRequest):
 def user_cards(request: HttpRequest):
     cards = [CardContainer(card) for card in Card.objects.filter(user=request.user)]
     return render(request, "views/cards.html", {"cards": cards})
+
+
+def confirm_payment(request: HttpRequest, card_pk: int, value: int):
+    history = History.objects.create(
+        user=request.user, amount=value, card=Card.objects.get(pk=card_pk)
+    )
+    return render(
+        request,
+        "views/confirm_payment.html",
+        {
+            "confirmation_code": random.randint(11111, 99999),
+            "history_pk": history.pk,
+        },
+    )
+
+
+def success(request: HttpRequest, card_pk: int, value: int, history_pk: int):
+    card = Card.objects.get(pk=card_pk)
+    request.user.balance += value
+    request.user.save()
+    card.balance -= value
+    card.save()
+    history = History.objects.get(pk=history_pk)
+    history.status = True
+    history.save()
+    return redirect("history")
