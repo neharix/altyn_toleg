@@ -1,14 +1,16 @@
-:root{
+:root {
     --bg-color: #f2f2f2;
     --block-color: #ffffff;
     --block-margin-size: 20px;
     --default-font-size: 1.1rem;
-    --default-font-family: Exo;
+    --default-font-family: Quicksand;
+    --default-font-weight: 600;
 }
 
 * {
     font-family: var(--default-font-family);
     font-size: var(--default-font-size);
+    font-weight: var(--default-font-weight);
 }
 
 nav {
@@ -16,9 +18,11 @@ nav {
     background-color: var(--block-color);
     min-width: 400px !important;
 }
+
 body {
     background-color: var(--bg-color);
 }
+
 .block {
     margin-top: var(--block-margin-size);
     margin-bottom: var(--block-margin-size);

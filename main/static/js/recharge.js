@@ -87,5 +87,5 @@ count.onkeyup = update_accept_btn_text;
 count.onkeydown = update_accept_btn_text;
 
 accept_btn.onclick = () => {
-    location.href = `/recharge/${card_input.getAttribute('data')}/${count.value || 0}/`;
+    location.href = `/recharge/card/${card_input.getAttribute('data')}/value/${count.value || 0}/`;
 }

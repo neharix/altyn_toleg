@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import *
+
+
+@admin.register(Card)
+class CardAdmin(admin.ModelAdmin):
+    list_display = ["pk", "number", "holder", "balance", "expiration_date"]
