@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-&u#o!!#6ld-)6-==7h10e!6$a&h%jy8+5ne(u^hb=(+kp2^1xg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -111,6 +111,12 @@ TIME_ZONE = "Asia/Ashgabat"
 USE_I18N = True
 
 USE_TZ = True
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "altyntoleg@gmail.com"
+EMAIL_HOST_PASSWORD = "vizo ijwv dtft achk"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 
 # Static files (CSS, JavaScript, Images)

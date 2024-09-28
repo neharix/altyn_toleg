@@ -3,8 +3,9 @@ from django.db import models
 
 
 class User(AbstractUser):
-    number = models.CharField(max_length=8)
+    number = models.CharField(max_length=8, unique=True)
     balance = models.FloatField(default=0)
+    password_for_usage = models.CharField(max_length=250)
 
     REQUIRED_FIELDS = ["number"]
 

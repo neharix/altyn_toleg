@@ -17,3 +17,39 @@ new Formatter(inputExpirationDate[i], {
 });
 }
 
+let card = document.querySelector("#number");
+let date = document.querySelector("#expiration-date");
+let accept_btn = document.querySelector("#accept-btn");
+
+function validate_card_number() {
+    let status = true;
+    try {
+        let card_value = card.value.split(" ");
+        if (card_value.length < 4) {
+            status = false;
+        }
+        for (let i = 0; i < card_value.length; i++){
+            if (card_value[i].length < 4) {
+                status = false;
+                break;
+            }
+        }
+        if (status) {
+            if (accept_btn.classList.contains("disabled")) {
+                accept_btn.classList.remove("disabled");
+            }
+        }
+        else {
+            if (accept_btn.classList.contains("disabled") == false) {
+                accept_btn.classList.add("disabled");
+            }
+        }
+    }
+    catch {
+        if (accept_btn.classList.contains("disabled") == false) {
+            accept_btn.classList.add("disabled");
+        }
+    }
+}
+card.onkeyup = validate_card_number;
+card.onkeydown = validate_card_number;
